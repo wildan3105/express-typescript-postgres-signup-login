@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "engine": {
-        "node": ">=18.10.0",
+    "engines": {
+        "node": "20.x",
         "npm": ">=9.5.0"
     },
     "dependencies": {
@@ -43,8 +43,10 @@
         "ts-node-dev": "^2.0.0"
     },
     "scripts": {
-        "start": "ts-node-dev --poll --transpile-only --respawn src/server.ts --watch src/server.ts",
+        "start": "node builds/src/server.js",
+        "start:dev": "ts-node-dev --poll --transpile-only --respawn src/server.ts --watch src/server.ts",
         "build": "rm -rf builds && tsc",
+        "postinstall": "npm run build",
         "migration:run": "ts-node ./node_modules/typeorm/cli.js -d src/libs/typeorm/ormconfig-cli.ts migration:run",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
