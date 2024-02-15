@@ -17,11 +17,7 @@ export const IS_PRODUCTION = APP_ENV === 'production';
 export const IS_LOCAL = APP_ENV === 'local';
 export const IS_TEST = APP_ENV === 'test';
 
-export const PGDATABASE = process.env.PGDATABASE;
-export const PGHOST = process.env.PGHOST;
-export const PGPORT = Number(process.env.PGPORT) || 5432;
-export const PGUSER = process.env.PGUSER;
-export const PGPASSWORD = process.env.PGPASSWORD;
+export const DATABASE_URL = process.env.DATABASE_URL;
 
 export const ELASTIC_EMAIL_BASE_URL = process.env.ELASTIC_EMAIL_BASE_URL;
 export const ELASTIC_EMAIL_API_KEY = process.env.ELASTIC_EMAIL_API_KEY;
