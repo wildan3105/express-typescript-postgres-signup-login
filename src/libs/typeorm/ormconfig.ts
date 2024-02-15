@@ -30,7 +30,12 @@ export const OrmConfig = {
         // time to consider query is taking too long
         statement_timeout: 360000, // 6 minutes
 
-        max: IS_PRODUCTION ? 50 : 10
+        max: IS_PRODUCTION ? 50 : 10,
+
+        // Enable SSL
+        ssl: {
+            rejectUnauthorized: IS_PRODUCTION ? true : false // Set to true in production to reject unauthorized connections
+        }
     },
     replication: {
         master: {
