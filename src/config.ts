@@ -22,6 +22,8 @@ export const DATABASE_URL = process.env.DATABASE_URL;
 export const ELASTIC_EMAIL_BASE_URL = process.env.ELASTIC_EMAIL_BASE_URL;
 export const ELASTIC_EMAIL_API_KEY = process.env.ELASTIC_EMAIL_API_KEY;
 
-export const BASE_URL = APP_ENV === 'local' ? `http://localhost:${PORT}` : 'https://backend-point.com'; // to be changed with the actual server URL later
+export const APP_BASE_URL = process.env.APP_BASE_URL;
+
+export const BASE_URL = APP_ENV === 'local' ? `http://localhost:${PORT}` : APP_BASE_URL;
 
 export const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
