@@ -30,12 +30,7 @@ export const OrmConfig = {
         // time to consider query is taking too long
         statement_timeout: 360000, // 6 minutes
 
-        max: IS_PRODUCTION ? 50 : 10,
-
-        // Enable SSL
-        ssl: {
-            rejectUnauthorized: IS_PRODUCTION ? true : false // Set to true in production to reject unauthorized connections
-        }
+        max: IS_PRODUCTION ? 50 : 10
     },
     replication: {
         master: {
@@ -43,7 +38,8 @@ export const OrmConfig = {
             host: PGHOST,
             port: PGPORT,
             username: PGUSER,
-            password: PGPASSWORD
+            password: PGPASSWORD,
+            ssl: IS_PRODUCTION ? true : false
         },
         slaves: []
     }
