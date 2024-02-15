@@ -38,7 +38,8 @@ export const OrmConfig = {
             host: PGHOST,
             port: PGPORT,
             username: PGUSER,
-            password: PGPASSWORD
+            password: PGPASSWORD,
+            ssl: IS_PRODUCTION ? true : false
         },
         slaves: []
     }
