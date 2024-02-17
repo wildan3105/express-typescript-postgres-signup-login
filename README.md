@@ -189,5 +189,5 @@ Complete definition of APIs (request body, request parameter, etc.) can be found
 
 -   [mkosir/typeorm-express-typescript](https://github.com/mkosir/typeorm-express-typescript)
 -   [emangor/boilerplate-typescript-express-postgres](https://github.com/emangor/boilerplate-typescript-express-postgres)
--   [backend-postgres-typescript-node-express](https://github.com/leonardorb/backend-postgres-typescript-node-express)
--   [typescript-postgres-auth-example](https://github.com/mikesparr/typescript-postgres-auth-example)
+-   [leonardorb/backend-postgres-typescript-node-express](https://github.com/leonardorb/backend-postgres-typescript-node-express)
+-   [mikesparr/typescript-postgres-auth-example](https://github.com/mikesparr/typescript-postgres-auth-example)
