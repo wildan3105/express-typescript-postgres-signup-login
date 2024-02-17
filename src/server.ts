@@ -1,7 +1,10 @@
 import 'source-map-support/register';
+import gracefulShutdown from 'http-graceful-shutdown';
+import throng from 'throng';
 
 import { createApp } from './app';
-import gracefulShutdown from 'http-graceful-shutdown';
+
+import { WEB_CONCURRENCY } from './config';
 
 /**
  * Helper function to log an exit code before exiting the process.
@@ -37,16 +40,23 @@ const setupProcessEventListeners = () => {
  * Start an Express server and installs signal handlers on the
  * process for graceful shutdown.
  */
-(async () => {
+const startServer = async () => {
     try {
         const { app } = await createApp();
-        const server = app.listen(app.get('port'), () => {
-            console.log(`Started express server in environment: ${app.get('env')} on port: ${app.get('port')}`);
+        const port = app.get('port');
+
+        const server = app.listen(port, () => {
+            console.log(`Started Express server in environment: ${app.get('env')} on port: ${port}`);
         });
 
         gracefulShutdown(server);
         setupProcessEventListeners();
     } catch (err) {
-        console.error(`error caught in server.ts, details: ${err}`);
+        console.error(`Error caught in server.ts, details: ${err}`);
     }
-})();
+};
+
+throng({
+    start: startServer,
+    count: WEB_CONCURRENCY
+});
