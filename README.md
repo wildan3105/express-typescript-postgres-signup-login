@@ -6,6 +6,12 @@
 -   Framework: ExpressJS
 -   Database: PostgreSQL
 
+### [WIP] Features
+
+-   [ ] A
+-   [ ] B
+-   [ ] C
+
 ## How to run
 
 ### System requirement
@@ -31,14 +37,18 @@ PGDATABASE='db'
 PGPASSWORD='postgrespass123'
 ```
 
-#### Using TypeScript
+#### Using TypeScript (simulate development)
 
 1. Run the server `npm run start` (it will watch any `TS` file changes and re-spawn it automatically)
 
-#### Using JavaScript
+#### Using JavaScript (simulate production)
 
 1. Build to JS files: `npm run build`
 2. Run the JS file: `node builds/src/server.js`
+
+#### Using docker
+
+TBD
 
 ## Testing
 
@@ -174,3 +184,10 @@ Complete definition of APIs (request body, request parameter, etc.) can be found
 | **/users/auth/logout**     | Log out for a user                |
 | **/users/verify**          | Verify user (to make user active) |
 | **/users/profile**         | View logged in user's profile     |
+
+### Similar projects
+
+-   [mkosir/typeorm-express-typescript](https://github.com/mkosir/typeorm-express-typescript)
+-   [emangor/boilerplate-typescript-express-postgres](https://github.com/emangor/boilerplate-typescript-express-postgres)
+-   [leonardorb/backend-postgres-typescript-node-express](https://github.com/leonardorb/backend-postgres-typescript-node-express)
+-   [mikesparr/typescript-postgres-auth-example](https://github.com/mikesparr/typescript-postgres-auth-example)
