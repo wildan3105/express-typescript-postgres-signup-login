@@ -27,3 +27,5 @@ export const APP_BASE_URL = process.env.APP_BASE_URL;
 export const BASE_URL = APP_ENV === 'local' ? `http://localhost:${PORT}` : APP_BASE_URL;
 
 export const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
+
+export const WEB_CONCURRENCY = Number(process.env.WEB_CONCURRENCY) || 1;
