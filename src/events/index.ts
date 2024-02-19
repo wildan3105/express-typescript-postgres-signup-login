@@ -1,9 +1,9 @@
 import { EventEmitter } from 'events';
 import { UserEventListener } from './listeners/user-event';
 import { User } from '../domain/user-entity';
-import { ElasticEmailService } from '../services/external/email/index';
+import { EmailService } from '../services/external/email/index';
 
-const emailService = new ElasticEmailService();
+const emailService = new EmailService();
 
 class Event extends EventEmitter {}
 

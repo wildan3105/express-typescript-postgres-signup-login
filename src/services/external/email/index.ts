@@ -9,7 +9,7 @@ interface sendEmailBody {
     content: string;
 }
 
-export class ElasticEmailService {
+export class EmailService {
     private baseURL: string;
     private apiKey: string;
 
