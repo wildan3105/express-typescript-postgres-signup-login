@@ -1,4 +1,4 @@
-## How to run
+## [WIP] How to run
 
 1. Import the postman [collection](./express-typescript-postgres.postman_collection.json) and [environment](./express-typescript-postgres.postman_environment) to your postman.
 2. Run the app as mentioned in [here](../README.md#running-locally).

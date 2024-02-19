@@ -5,12 +5,14 @@
 -   Language: TypeScript
 -   Framework: ExpressJS
 -   Database: PostgreSQL
+-   Auth: JSON web token (JWT)
 
 ### [WIP] Features
 
--   [ ] A
--   [ ] B
--   [ ] C
+-   [x] Sign up
+-   [x] Verify email (sent via elastic email)
+-   [x] Login using JWT token
+-   [x] See logged user's profile
 
 ## How to run
 
@@ -27,14 +29,10 @@
 1. Clone the project: `git clone git@github.com:wildan3105/express-typescript-postgres-signup-login.git`
 2. Install dependencies: `npm i`
 3. Copy the environment variable and adjust the value accordingly: `cp .env.example .env`
-4. Create a postgre user and then database in which you have full access to that DB (could [create extension](./src/libs/typeorm/migrations/1691117052407-create-user-table.ts#L5-L6)). And then specify the credentials in the `.env` file
+4. Create a postgre user and then database in which you have full access to that DB (could [create extension](./src/libs/typeorm/migrations/1691117052407-create-user-table.ts#L5-L6)). And then specify the credentials in the `.env` file as `DATABASE_URL`
 
 ```bash
-PGHOST='localhost'
-PGPORT='5432'
-PGUSER='postgres'
-PGDATABASE='db'
-PGPASSWORD='postgrespass123'
+DATABASE_URL='postgres://user:password@host:port/database'
 ```
 
 #### Using TypeScript (simulate development)
@@ -72,7 +70,7 @@ npm run lint:fix -> to fix the lint error if it's fixable
 
 Still WIP
 
-#### Unit test (partial)
+#### Unit test
 
 ```bash
 npm run test
@@ -175,15 +173,15 @@ Please go [here](./postman/)
 
 Complete definition of APIs (request body, request parameter, etc.) can be found in this [spec](./docs/openapi.yaml).
 
-| Route                      | Description                       |
-| -------------------------- | --------------------------------- |
-| **/healthcheck/readiness** | Readiness healthcheck             |
-| **/healthcheck/liveness**  | Liveness healthcheck              |
-| **/users**                 | Create a user                     |
-| **/users/auth/login**      | Log in for a user                 |
-| **/users/auth/logout**     | Log out for a user                |
-| **/users/verify**          | Verify user (to make user active) |
-| **/users/profile**         | View logged in user's profile     |
+| Method | Route                      | Description                       |
+| ------ | -------------------------- | --------------------------------- |
+| GET    | **/healthcheck/readiness** | Readiness healthcheck             |
+| GET    | **/healthcheck/liveness**  | Liveness healthcheck              |
+| POST   | **/users**                 | Create a user                     |
+| POST   | **/users/auth/login**      | Log in for a user                 |
+| POST   | **/users/auth/logout**     | Log out for a user                |
+| GET    | **/users/verify**          | Verify user (to make user active) |
+| GET    | **/users/profile**         | View logged in user's profile     |
 
 ### Similar projects
 
