@@ -1,12 +1,12 @@
 openapi: 3.0.0
 info:
-  version: 0.0.1
+  version: 1.0.0
   title: 'express-typescript-postgres Swagger Docs'
   description: 'express-typescript-postgres'
 servers:
-  - description: SwaggerHub API Auto Mocking
-    url: 'https://google.com'
-  - description: Local development
+  - description: Remote URL of express-typescript-postgres-signup-login
+    url: 'https://simple-signup-login-078d53a6175d.herokuapp.com'
+  - description: Local development of express-typescript-postgres-signup-login
     url: 'http://localhost:3001'
 paths:
   /:

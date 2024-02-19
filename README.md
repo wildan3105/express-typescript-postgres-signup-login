@@ -13,6 +13,7 @@
 -   [x] Verify email (sent via elastic email)
 -   [x] Login using JWT token
 -   [x] See logged user's profile
+-   [x] [Swagger UI](https://simple-signup-login-078d53a6175d.herokuapp.com/api-docs)
 
 ## How to run
 
@@ -171,17 +172,7 @@ Please go [here](./postman/)
 
 ### API Routes
 
-Complete definition of APIs (request body, request parameter, etc.) can be found in this [spec](./docs/openapi.yaml).
-
-| Method | Route                      | Description                       |
-| ------ | -------------------------- | --------------------------------- |
-| GET    | **/healthcheck/readiness** | Readiness healthcheck             |
-| GET    | **/healthcheck/liveness**  | Liveness healthcheck              |
-| POST   | **/users**                 | Create a user                     |
-| POST   | **/users/auth/login**      | Log in for a user                 |
-| POST   | **/users/auth/logout**     | Log out for a user                |
-| GET    | **/users/verify**          | Verify user (to make user active) |
-| GET    | **/users/profile**         | View logged in user's profile     |
+Please head over to this URL: [swagger](https://simple-signup-login-078d53a6175d.herokuapp.com/api-docs)
 
 ### Similar projects
 
