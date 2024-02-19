@@ -51,7 +51,8 @@
     "scripts": {
         "start": "node builds/src/server.js",
         "start:dev": "ts-node-dev --poll --transpile-only --respawn src/server.ts --watch src/server.ts",
-        "build": "rm -rf builds && tsc",
+        "build": "rm -rf builds && tsc && npm run copy-docs",
+        "copy-docs": "cp -r docs builds/",
         "migration:run": "ts-node ./node_modules/typeorm/cli.js -d src/libs/typeorm/ormconfig-cli.ts migration:run",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
