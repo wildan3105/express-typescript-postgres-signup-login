@@ -1,12 +1,12 @@
-import { ElasticEmailService } from '../../services/external/email/index';
+import { EmailService } from '../../services/external/email/index';
 import { User } from '../../domain/user-entity';
 import { emailTemplates, emailType } from '../../services/external/email/template';
 import { BASE_URL } from '../../config';
 
 export class UserEventListener {
-    private emailService: ElasticEmailService;
+    private emailService: EmailService;
 
-    constructor(emailService: ElasticEmailService) {
+    constructor(emailService: EmailService) {
         this.emailService = emailService;
     }
 
